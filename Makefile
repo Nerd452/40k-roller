@@ -9,11 +9,6 @@ build:
 	
 	javac src/**/*.java -cp "lib/*:src" -d bin
 
-
-#runs the main application
-run: 
-	java -cp bin main/Main
-
 #runs all tests
 test:
 	java -jar lib/* execute --class-path bin --scan-class-path
