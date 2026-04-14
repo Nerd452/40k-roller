@@ -37,6 +37,8 @@ public class Main {
 
         //Simple flag based cli
         if (args.length != 0) {
+
+            //code for the -d flag
             if (args[0].equals("-d")) {
                 if (args.length == 2) {
                     try {
@@ -56,8 +58,14 @@ public class Main {
                     System.out.println("Invalid Length");
                 }
 
-            } else {
-                System.out.println("Invalid Input");
+            }
+
+            else if (args[0].equals("-h")){
+                System.out.println("Availiable Flags\n-h :: print this help message\n-d <ARG> :: rols ARG amount of dice");
+            }
+
+            else {
+                System.out.println("ERROR: Invalid Argument, please use the -h flag to get the help message");
             }
         }
 
