@@ -27,12 +27,13 @@ public class Rolling
      *@Param diceAmount
      *
      */
-    public ArrayList<Integer> getDice(final int diceAmount){
+    public static ArrayList<Integer> getDice(final int diceAmount){
         ArrayList<Integer> returnable = new ArrayList<Integer>();
         int temp;
+        Random random = new Random();
         for(int i = 0; i < diceAmount; i++)
         {
-            temp = (this.random).nextInt(6) + 1;
+            temp = random.nextInt(6) + 1;
             returnable.add(temp);
         }
 

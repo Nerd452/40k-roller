@@ -9,6 +9,7 @@ build:
 	
 	javac src/**/*.java -cp "lib/*:src" -d bin
 
+
 #runs all tests
 test:
 	java -jar lib/* execute --class-path bin --scan-class-path
@@ -28,6 +29,7 @@ clearB:
 #clears the docs
 clearD:
 	rm -fr docs
+
 
 
 
