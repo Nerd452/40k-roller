@@ -242,11 +242,16 @@ public ArrayList<Integer> getRapid()
     // NEW GEN 2 METHODS START
 
 
+    public static void upCLIManager(int diceNumber, int check, int[] success){
+
+        //SKELETON CODE
+
+    }
 
 
 
 
-
+    // NEW GEN 2 METHODS END
 
 
 

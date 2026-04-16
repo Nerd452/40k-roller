@@ -8,8 +8,12 @@ import java.lang.Integer;
 //Project Imports
 import rollingUtils.Uppies;
 import scannerUtils.SuperScanner;
-
 import rollingUtils.Rolling;
+
+import static cliUtils.CliUtils.enterToCont;
+import static cliUtils.CliUtils.promptInt;
+import static cliUtils.OSCalls.clear;
+
 
 
 /*
@@ -75,8 +79,14 @@ public class Main {
         //Start of complete cli
         else {
 
+            //defines constants used throughout the complete cli
+
 
             while (true) {
+
+                //MIGHT REMOVE
+                clear();
+
 
                 System.out.println("0) Exit");
                 System.out.println("or");
@@ -84,12 +94,13 @@ public class Main {
                 System.out.println("or");
                 System.out.println("2) save");
 
-                int hitOrSave = scc.nextInt();
+
+
+                int hitOrSave = promptInt();
 
 
                 if (hitOrSave == 0) {
                     scc.close();
-
                     System.exit(0);
                 }
 
@@ -141,7 +152,7 @@ public class Main {
                         } else {
                             System.out.println("6)Sustained hits:");
                         }
-                        ability = scc.nextInt();
+                        ability = promptInt();
                     }
 
 
@@ -149,13 +160,13 @@ public class Main {
                     //hit
                     ArrayList<Integer> diceArray = new ArrayList<>();
                     System.out.println("How many dice?");
-                    int diceNumber = scc.nextInt();
+                    int diceNumber = promptInt();
 
                     System.out.println("How many of this weapon?");
-                    int weaponCount = scc.nextInt();
+                    int weaponCount = promptInt();
 
                     System.out.println("Hit roll?");
-                    int hitroll = scc.nextInt();
+                    int hitroll = promptInt();
 
                     Uppies uppieHit = new Uppies(diceNumber, hitroll, new int[]{ability, weaponCount});
 
@@ -190,7 +201,7 @@ public class Main {
                     if (ability == 2) //if lethal hits
                     {
                         System.out.println("Wound roll?");
-                        int upOnWound = scc.nextInt();
+                        int upOnWound = promptInt();
                         Uppies uppieWound = new Uppies(success[0] - success[1], upOnWound, new int[]{0, success[1]});
                         uppieWound.getNutin();
                         success = uppieWound.getSuccess();
@@ -204,7 +215,7 @@ public class Main {
                         System.out.println("Wound roll?");
 
 
-                        int upOnWound = scc.nextInt();
+                        int upOnWound = promptInt();
 
 
                         Uppies uppieWound = new Uppies(success[0], upOnWound, new int[]{0, 0});
@@ -221,29 +232,31 @@ public class Main {
 
                     }
 
+                    enterToCont();
+
 
                 } else {
 
 
                     System.out.println("How many dice?");
 
-                    int diceNumber = scc.nextInt();
+                    int diceNumber = promptInt();
 
 
                     System.out.println("save Roll?");
 
-                    int upOnSave = scc.nextInt();
+                    int upOnSave = promptInt();
 
 
                     System.out.println("Damage Per Dice?");
 
-                    int damPerDice = scc.nextInt();
+                    int damPerDice = promptInt();
 
                     System.out.println("Feel No Pain?");
                     System.out.println("1) yes");
                     System.out.println("2) no");
 
-                    int feelNoPain = scc.nextInt();
+                    int feelNoPain = promptInt();
 
 
                     Uppies uppieSave = new Uppies(diceNumber, upOnSave, new int[]{0, 0});
@@ -259,7 +272,7 @@ public class Main {
 
                         System.out.println("FeelNoPain Save?");
 
-                        int FoPain = scc.nextInt();
+                        int FoPain = promptInt();
 
 
                         Uppies uppieNoPain = new Uppies(diceNumber, upOnSave, new int[]{FoPain, damPerDice});
@@ -278,6 +291,8 @@ public class Main {
                         System.out.println("Failed:" + success[0] + "      Total Damage:" + success[0] * damPerDice);
 
                     }
+
+                    enterToCont();
 
                 }
 

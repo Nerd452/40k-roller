@@ -27,7 +27,12 @@ public class SuperScanner implements Closeable{
      */
     public int nextInt(){
         int returnable = sc.nextInt();
+        sc.nextLine();
         return returnable;
+    }
+
+    public String nextLine(){
+        return sc.nextLine();
     }
 
 
