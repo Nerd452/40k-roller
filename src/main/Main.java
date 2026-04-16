@@ -13,7 +13,7 @@ import rollingUtils.Rolling;
 import static cliUtils.CliUtils.enterToCont;
 import static cliUtils.CliUtils.promptInt;
 import static cliUtils.OSCalls.clear;
-
+import static cliUtils.FlagCli.runFlagCli;
 
 
 /*
@@ -40,37 +40,9 @@ public class Main {
         SuperScanner scc = new SuperScanner();
 
         //Simple flag based cli
-        if (args.length != 0) {
-
-            //code for the -d flag
-            if (args[0].equals("-d")) {
-                if (args.length == 2) {
-                    try {
-                        int numberOfDice = Integer.parseInt(args[1]);
-                        ArrayList<Integer> myDice = Rolling.getDice(numberOfDice);
-                        System.out.print("[");
-                        for (int i = 0; i < myDice.size() - 1 ; i++) {
-                            System.out.print(myDice.get(i) + ", ");
-                        }
-                        System.out.println(myDice.get(myDice.size() - 1) + "]");
-
-
-                    } catch (java.lang.Exception e) {
-                        System.out.println("Invalid Input");
-                    }
-                } else {
-                    System.out.println("Invalid Length");
-                }
-
-            }
-
-            else if (args[0].equals("-h")){
-                System.out.println("Availiable Flags\n-h :: print this help message\n-d <ARG> :: rols ARG amount of dice");
-            }
-
-            else {
-                System.out.println("ERROR: Invalid Argument, please use the -h flag to get the help message");
-            }
+        if (runFlagCli(args)) {
+            scc.close();
+            System.exit(0);
         }
 
 
