@@ -11,7 +11,7 @@ public class SuperScanner implements Closeable{
     private Scanner sc;
     
     /**
-     *Constructor for the super Scanner class
+     *Constructor for the Super Scanner class
      */
     public SuperScanner(){
         sc = new Scanner(System.in);
@@ -23,7 +23,11 @@ public class SuperScanner implements Closeable{
     //METHODS START
 
     /**
-     *
+     * runs the following code <br>
+     * int returnable sc.nextInt(); <br>
+     * sc.nextLine(); <br>
+     * return returnable; <br>
+     * @return returns the captured integer
      */
     public int nextInt(){
         int returnable = sc.nextInt();
@@ -31,6 +35,10 @@ public class SuperScanner implements Closeable{
         return returnable;
     }
 
+    /**
+     * replicates the nextLine() Scanner Function
+     * @return returns the caputred line
+     */
     public String nextLine(){
         return sc.nextLine();
     }

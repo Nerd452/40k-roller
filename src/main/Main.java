@@ -7,13 +7,13 @@ import java.lang.Integer;
 
 //Project Imports
 import rollingUtils.Uppies;
-import scannerUtils.SuperScanner;
-import rollingUtils.Rolling;
+
 
 import static cliUtils.CliUtils.enterToCont;
 import static cliUtils.CliUtils.promptInt;
 import static cliUtils.OSCalls.clear;
 import static cliUtils.FlagCli.runFlagCli;
+import static cliUtils.CliUtils.exit;
 
 
 /*
@@ -37,12 +37,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        SuperScanner scc = new SuperScanner();
 
         //Simple flag based cli
         if (runFlagCli(args)) {
-            scc.close();
-            System.exit(0);
+            exit(0);
         }
 
 
@@ -72,9 +70,9 @@ public class Main {
 
 
                 if (hitOrSave == 0) {
-                    scc.close();
-                    System.exit(0);
+                    exit(0);
                 }
+
 
 
                 if (hitOrSave == 1) {
@@ -207,7 +205,10 @@ public class Main {
                     enterToCont();
 
 
-                } else {
+                }
+
+
+                else {
 
 
                     System.out.println("How many dice?");

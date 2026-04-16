@@ -13,14 +13,6 @@ public class Rolling
 
 
 
-    /**
-     *The Main Constructor for the Rolling Class, initializes random
-     */
-    public Rolling()
-    {   
-
-
-    }
     
 
 

@@ -242,11 +242,41 @@ public ArrayList<Integer> getRapid()
     // NEW GEN 2 METHODS START
 
 
-    public static void upCLIManager(int diceNumber, int check, int[] success){
+    public static void upCLIManager(int diceNumber, int check, int[] success, ArrayList<Boolean> choices){
+        //validity checks
+        if (choices.size() != 5) {
+            throw new IllegalArgumentException("Choices Must be of size 5");
+        }
+
+
 
         //SKELETON CODE
 
     }
+
+    //TODO Implement the lethalHits() method
+
+    /**
+     *
+     * @param diceResults - the results of the dice roll
+     * @return - the number of dice that got a 6
+     */
+    public static int lethalHits(ArrayList<Integer> diceResults){
+
+        int returnable = 0;
+
+        for (int i = 0; i<diceResults.size() ; i++) {
+            if (diceResults.get(i) == 6) {
+                returnable ++;
+            }
+        }
+
+        return returnable;
+    }
+
+
+
+
 
 
 

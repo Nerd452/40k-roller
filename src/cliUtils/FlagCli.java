@@ -7,6 +7,12 @@ import java.util.ArrayList;
 public class FlagCli {
 
 
+    /**
+     * runs the code for the -d ARG flag for the flag based cli <br>
+     * the -d ARG flag returns a string with the values of a given (ARG) amount of D6 dice
+     * @param arg the number argument for the -d ARG
+     * @return a string representing the dice values
+     */
     public static String dFlag(String arg){
             try {
                 String returnable;
@@ -26,7 +32,12 @@ public class FlagCli {
 
     }
 
-    
+
+    /**
+     * starts the flag base cli with the given flags
+     * @param args the arguments/flags/options given to the cli
+     * @return true if args.length > 0, false if args.length == 0
+     */
     public static boolean runFlagCli(String[] args){
 
         if(args.length == 0){
