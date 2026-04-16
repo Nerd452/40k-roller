@@ -145,6 +145,7 @@ public class Main {
                     }
 
 
+
                     //hit
                     ArrayList<Integer> diceArray = new ArrayList<>();
                     System.out.println("How many dice?");

@@ -15,11 +15,25 @@ This project's goal is to build a specialized dice roller command line applicati
 
 
 <h2>Project Structure;</h2>
+󱧼 src
+├──  main
+│   └──  Main.java
+├──  rollingUtils
+│   ├──  Rolling.java
+│   └──  Uppies.java
+├──  scannerUtils
+│   ├──  Closeable.java
+│   └──  SuperScanner.java
+└── 󰙨 test
+    ├──  RollingTest.java
+    └──  UppiesTest.java
+
+<h2>Packages<h2>
+
 
 <h3>rollingUtils package;</h3>
 
 
-<h3>main package</h3>
 
 
 

@@ -11,7 +11,6 @@ public class Uppies
     ArrayList<Boolean> choices;
     ArrayList<Integer> diceResults;
 
-    Rolling roller;
 
     /**
      *To Be Phased Out
@@ -24,19 +23,17 @@ public class Uppies
         this.choices = choices;
         
 
-        Rolling rolling = new Rolling();
-        diceResults = rolling.getDice(diceNumber);
+
+        diceResults = Rolling.getDice(diceNumber);
     }
 
 
-    public Uppies()
-    {
-        this.roller = new Rolling();
-    }
+
     
 
 
-    //METHODS
+    // OLD GEN 1 METHODS START
+
     public int abilities()
     {
         return this.check;
@@ -68,8 +65,8 @@ public class Uppies
     public ArrayList<Integer> getHazard() 
     {
 
-            Rolling rolling = new Rolling();
-            diceResults = rolling.getDice(diceNumber);
+
+            diceResults = Rolling.getDice(diceNumber);
 
             for (int i = 0; i < diceResults.size();  i++) 
                 {
@@ -96,8 +93,10 @@ public class Uppies
 
         return diceResults;
     }
+
+
     public ArrayList<Integer> getSustained() 
-{
+    {
         success[0] = 0;
         
         ArrayList<Integer> newDiceSus = new ArrayList<>();
@@ -124,8 +123,8 @@ public class Uppies
                         AmountSus = AmountSus + 1; //add one to the amout of "six" dice
             
                     AmountSus = AmountSus * AmountMod; //sustained amount times the sustained modifieer
-                    Rolling rolling = new Rolling();
-                    diceResults = rolling.getDice(AmountSus);
+
+                    diceResults = Rolling.getDice(AmountSus);
                 }
         }
         return diceResults;
@@ -139,8 +138,7 @@ public ArrayList<Integer> getBlast()
     Scanner howMany = new Scanner(System.in);
     System.out.println("How many models in enemy unit?");
     blastNumber = howMany.nextInt() / 5; //number of enemy models in enemy unit
-    Rolling rolling = new Rolling();
-    diceResults = rolling.getDice(blastNumber);
+    diceResults = Rolling.getDice(blastNumber);
     diceResults.addAll(newDiceBlast); //adding the blast list into the total rolls
 
     return diceResults;
@@ -159,9 +157,12 @@ public ArrayList<Integer> getRapid()
 
         int rapidFiredDice = rapidF * weponCount; //number of rapidFireDice 
 
-        Rolling rolling = new Rolling(); // list of all the rapidFireDice
+         // list of all the rapidFireDice
 
-        diceResults = rolling.getDice(diceNumber);//adding the reapid fire dice to the base dicelist
+        diceResults = Rolling.getDice(diceNumber);//adding the reapid fire dice to the base dicelist
+
+        rapidd.close();
+        wepCount.close();
 
         return diceResults;
 }
@@ -199,8 +200,7 @@ public ArrayList<Integer> getRapid()
         int diceSaver = success[0]; //4
         success[0] = success[0] * success[1]; //8
         System.out.println("");
-        Rolling rolling = new Rolling();
-        diceResults = rolling.getDice(success[0]);
+        diceResults = Rolling.getDice(success[0]);
         int diceAmount = 0;
         System.out.print("P: ");
         for (int i = 0; i < success[0]; i++) //8
@@ -228,4 +228,28 @@ public ArrayList<Integer> getRapid()
     {
         return success;
     }
+
+
+
+    //OLD GEN 1 METHODS END
+
+
+
+
+
+
+
+    // NEW GEN 2 METHODS START
+
+
+
+
+
+
+
+
+
+
+
+
 }

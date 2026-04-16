@@ -7,7 +7,7 @@ import java.util.ArrayList;
 /**
  * The Rolling class is used for generating and manipulating a large amount of randomly generated numbers from 1-6 or 1-3
  */
-public class Rolling 
+public class Rolling
 {
     private Random random; // generates random numbers
 
@@ -18,13 +18,16 @@ public class Rolling
      */
     public Rolling()
     {   
-        this.random = new Random();
+
+
     }
     
 
 
     /**
-     *@Param diceAmount
+     * @param diceAmount the amount of dice to be rolled
+     * @return an ArrayList of integers generated from the rolled dice
+     *
      *
      */
     public static ArrayList<Integer> getDice(final int diceAmount){

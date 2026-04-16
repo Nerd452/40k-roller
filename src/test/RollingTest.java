@@ -20,10 +20,9 @@ public class RollingTest
     public void getDiceWithArgumentTest()
     {
         //Arrange
-        Rolling roller = new Rolling();
         ArrayList<Integer> answers;
         //Act
-        answers = roller.getDice(12);
+        answers = Rolling.getDice(12);
         //Assert
         assertEquals(12, answers.size());
 
