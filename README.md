@@ -15,6 +15,8 @@ This project's goal is to build a specialized dice roller command line applicati
 
 
 <h2>Project Structure;</h2>
+
+```
 󱧼 src
 ├──  main
 │   └──  Main.java
@@ -27,6 +29,7 @@ This project's goal is to build a specialized dice roller command line applicati
 └── 󰙨 test
     ├──  RollingTest.java
     └──  UppiesTest.java
+```
 
 <h2>Packages<h2>
 
